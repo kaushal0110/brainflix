@@ -1,0 +1,38 @@
+@use "../../styles/partials/global";
+@import "../../styles/partials/variables";
+
+.nextVideos{
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    &__heading{
+        font-size: 1.3rem;
+        color: $silver;
+        padding-bottom: 1.6rem;
+        font-weight: 700;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        &--video{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1.6rem;
+            .thumbnail{
+                width: 10rem;
+                height: 6rem;
+                border-radius: .4rem;
+            }
+            .info{
+                width: 60%;
+                h6{
+                    font-size: 1.3rem;
+                    padding-bottom: .8rem;
+                }
+                p{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}

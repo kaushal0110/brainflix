@@ -1,0 +1,58 @@
+@use "../../styles/partials/global";
+@import "../../styles/partials/variables";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  &__heading {
+    &--title {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      font-weight: 700;
+      padding-bottom: 1.6rem;
+      border-bottom: 2px solid $mercury;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.6rem 4.8rem 1.6rem 0;
+    font-size: 1.3rem;
+    border-bottom: 2px solid $mercury;
+    &--channel-date {
+      .channel {
+        font-weight: 700;
+        margin-bottom: 1.6rem;
+      }
+      .date{
+          color: $silver;
+      }
+    }
+    &--likes-views {
+      .views {
+        color: $silver;
+        margin-bottom: 1.6rem;
+        display: flex;
+        &-icon{
+            width: 1.8rem;
+            height: 1.8rem;
+            margin-right: .3rem;
+        }
+      }
+      .likes{
+          color: $silver;
+          display: flex;
+          &-icon{
+            width: 1.8rem;
+            height: 1.8rem;
+            margin-right: .3rem;
+        }
+      }
+    }
+  }
+  &__description{
+      font-size: 1.3rem;
+      padding: 1.6rem 0;
+  }
+}
