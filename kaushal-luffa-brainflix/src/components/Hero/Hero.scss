@@ -1,10 +1,15 @@
 @use "../../styles/partials/global";
 @import "../../styles/partials/variables";
+@import '../../styles/partials/mixins';
 
 .hero {
   display: flex;
   flex-direction: column;
   padding: 1.6rem;
+  @include tablet{
+    padding: 1.6rem  3.6rem;
+  }
+  
   &__heading {
     &--title {
       font-size: 2.4rem;
@@ -12,6 +17,11 @@
       font-weight: 700;
       padding-bottom: 1.6rem;
       border-bottom: 2px solid $mercury;
+      @include tablet{
+        font-size: 3.3rem;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
     }
   }
   &__info {
@@ -20,20 +30,45 @@
     padding: 1.6rem 4.8rem 1.6rem 0;
     font-size: 1.3rem;
     border-bottom: 2px solid $mercury;
+    @include tablet{
+      font-size: 1.4rem;
+      padding-bottom: 0;
+    }
     &--channel-date {
+      @include tablet{
+
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+        // width: 100%;
+      }
       .channel {
         font-weight: 700;
         margin-bottom: 1.6rem;
+        @include tablet{
+          margin-right: 2.4rem;
+        }
       }
       .date{
+        @include tablet{
+          margin-top: .2rem;
+        }
           color: $silver;
       }
     }
     &--likes-views {
+      @include tablet{
+        display: flex;
+        justify-content: space-between;
+        // width: 100%;
+      }
       .views {
         color: $silver;
         margin-bottom: 1.6rem;
         display: flex;
+        @include tablet{
+          margin-right: 2.4rem;
+        }
         &-icon{
             width: 1.8rem;
             height: 1.8rem;

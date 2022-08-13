@@ -1,20 +1,31 @@
 @use "../../styles/partials/global";
 @import "../../styles/partials/variables";
+@import  '../../styles/partials/mixins';
 
 .comments__container {
   display: flex;
   flex-direction: column;
   padding: 0 1.6rem;
+  @include tablet{
+    padding: 0 3.6rem;
+  }
+  
 }
 .comment {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid $mercury;
   padding: 1.6rem 0;
+  @include tablet{
+    width: 100%;
+  }
   &__profile-pic {
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
+    @include tablet{
+      margin-right: 2.4rem;
+    }
   }
   &__content {
     display: flex;
@@ -22,6 +33,9 @@
     flex-direction: column;
     // padding-top: 1.6rem;
     width: 84%;
+    @include tablet{
+      width: 100%;
+    }
     &-name-date {
       display: flex;
       justify-content: space-between;

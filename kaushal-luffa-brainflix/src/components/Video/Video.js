@@ -4,19 +4,19 @@ import videoDetails from "../../data/video-details.json";
 import "./Video.scss";
 
 class  Video extends Component {
+  state={
+    src: videos.find(video => video.id === this.props.videoId)
+  }
   render(){
 
     return (
       <div className="video__container">
       <video
-        style={{
-          background: `transparent url("${videos[0].image}") 50% 50% / cover no-repeat`,
-          width: "100%",
-        }}
+        
         controls
-        poster="data:image/gif;base64"
+        poster={this.state.src.image}
         >
-        <source src={videoDetails[0].video} type="video/mp4" />
+        {/* <source src={videoDetails[0].video} type="video/mp4" /> */}
       </video>
     </div>
   );

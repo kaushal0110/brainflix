@@ -16,12 +16,15 @@ class AddComment extends Component {
         </div>
         <div className="addComment__container--input">
           <p>JOIN THE CONVERSATION</p>
+          <div className='addComment__container--tab'>
+
           <input type="text" placeholder="Add a new comment" />
           <div className="addComment__container--button">
             <div className="addComment__container--button-icon">
               <img src={commentIcon} alt="comment" />
             </div>
             <button className="addComment__container-btn">COMMENT</button>
+          </div>
           </div>
         </div>
       </div>

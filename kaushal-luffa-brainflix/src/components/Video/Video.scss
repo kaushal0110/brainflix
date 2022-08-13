@@ -2,5 +2,11 @@
 @import "../../styles/partials/variables";
 
 .video__container {
-   
+  background-color: black;
+  height: 75vh;
+  video {
+    width: 100%;
+    height: 100%;
+    padding: 0 12rem;
+  }
 }
