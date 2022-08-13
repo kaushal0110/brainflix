@@ -12,45 +12,51 @@ import videos from "./data/video-details.json";
 function randomVideoId(arr) {
   return Math.floor(Math.random() * arr.length);
 }
+function getVideo(array, id) {
+  return array.find((video) => video.id === id);
+}
+const ranId = videos[randomVideoId(videos)].id;
+
 class App extends Component {
   state = {
-    videoDetail,
-    videos,
-    videoId: videos[randomVideoId(videos)].id,
+    videoId: ranId,
   };
   setVideoId = (id) => {
     this.setState((prevState) => {
       return {
-        ...prevState,
         videoId: id,
       };
     });
   };
 
   render() {
-    const a = this.state.videos.find((video) => {
-      return video.id === this.state.videoId;
-    });
-    const numberOfComments = a.comments.length;
-
+    const video = getVideo(videos, this.state.videoId);
+    const {comments,description,id,image,views,likes,title,channel} = video    
+    const numberOfComments = comments.length;
     return (
       <div className="App">
         <Navbar />
-        <Video videoId={this.state.videoId} />
+        <Video videoId={id} image={image} />
         <div className="content__container">
           <div className="content__container--hac">
             <Hero
               videos={this.state.videos}
               setVideoId={this.setVideoId}
-              videoId={this.state.videoId}
+              videoId={id}
+              description={description}
+              channel={channel}
+              views={views}
+              likes={likes}
+              title={title}
             />
             <AddComment numberOfComments={numberOfComments} />
-            <Comments videos={this.state.videos} videoId={this.state.videoId} />
+            <Comments comments={comments} videoId={id} />
           </div>
           <div className="conten__container--nv">
             <NextVideos
-              videoDetail={this.state.videoDetail}
-              videoId={this.state.videoId}
+              videoDetail={videoDetail}
+              videoId={id}
+              setVideoId={this.setVideoId}
             />
           </div>
         </div>

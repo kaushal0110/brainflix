@@ -1,18 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import cimg from '../../assets/images/Mohan-muruge.jpg'
 import './Comment.scss'
 
-class Comments extends Component {
-  state = {
-    videoComments: this.props.videos.find(
-      (video) => video.id === this.props.videoId
-    ),
-  };
-  render() {
-    const comments = this.state.videoComments.comments
+const Comments = (props) => {
     return (
       <div className="comments__container">
-        {comments.map((comnt, idx) => {
+        {props.comments.map((comnt, idx) => {
           return (
             <div className="comment" key={idx}>
               <div className="comment__profile-pic">
@@ -34,7 +27,7 @@ class Comments extends Component {
         })}
       </div>
     );
-  }
+  
 }
 
 export default Comments

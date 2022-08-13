@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import logo from "../../BrainFlix-logo.svg";
 import searchIcon from "../../assets/icons/search.svg";
 import userImg from "../../assets/images/Mohan-muruge.jpg";
@@ -6,9 +6,7 @@ import uploadIcon from "../../assets/icons/upload.svg";
 import "./Navbar.scss";
 
 
-class Navbar extends Component {
-  render(){
-
+const  Navbar =(props) => {
     return (
       <div className="navbar">
       <div className="navbar__logo">
@@ -35,7 +33,7 @@ class Navbar extends Component {
       </div>
     </div>
   );
-}
+
 };
 
 export default Navbar;

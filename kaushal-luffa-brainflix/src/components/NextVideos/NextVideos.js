@@ -1,21 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 // import videos from "../../data/videos.json";
 import "./NextVideos.scss";
 
-class NextVideos extends Component {
-  state = {
-    nextVideos: this.props.videoDetail.filter(
-      (video) => video.id !== this.props.videoId
-    ),
-  };
-  render() {
+const  NextVideos =(props) => {
+    const nextVideos = props.videoDetail.filter(
+      (video) => video.id !== props.videoId
+    );
+    const {setVideoId} = props
+    function handleClick(id) {
+      setVideoId(id)
+    }
     return (
       <div className="nextVideos">
         <p className="nextVideos__heading">NEXT VIDEOS</p>
         <div className="nextVideos__container">
-          {this.state.nextVideos.map((video, idx) => {
+          {nextVideos.map((video, idx) => {
             return (
-              <div className="nextVideos__container--video" key={idx}>
+              <div
+                className="nextVideos__container--video"
+                key={idx}
+                onClick={() => handleClick(video.id)}
+              >
                 <div className="thumbnail">
                   <img
                     className="thumbnail-img"
@@ -33,7 +38,7 @@ class NextVideos extends Component {
         </div>
       </div>
     );
-  }
-};
+  
+}
 
 export default NextVideos;
