@@ -1,12 +1,13 @@
-@use "../../styles/partials/global";
-@import "../../styles/partials/variables";
-@import "../../styles/partials/mixins";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .navbar {
   display: flex;
   flex-direction: column;
   padding: 1.6rem;
   position: relative;
+
   @include tablet {
     display: flex;
     flex-direction: row;
@@ -14,28 +15,30 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 0;
-   
   }
-  @include laptop{
+
+  @include laptop {
     padding-left: 12rem;
     padding-right: 12rem;
-
   }
 
   &__logo {
     width: 12rem;
     height: 2.5rem;
     margin: 0 auto;
+
     @include tablet {
       margin-top: 1rem;
       margin-left: 3.6rem;
     }
   }
+
   &-input-img {
     margin-top: 1.6rem;
     display: flex;
     justify-content: space-between;
   }
+
   &__input {
     background-color: $albaster;
     height: 3.6rem;
@@ -45,6 +48,7 @@
     border-radius: 0.4rem;
     border: 0.1rem solid $mercury;
     max-width: 90%;
+
     @include tablet {
       height: 4rem;
       width: 100%;
@@ -57,26 +61,30 @@
       margin-top: 1.1rem;
       margin-left: 0.8rem;
     }
+
     &-box {
       border: none;
       outline: none;
       background-color: transparent;
       padding: 0.6rem 6.4rem 0.6rem 2.4rem;
-      
     }
   }
+
   &__userImg {
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
+
     @include tablet {
       position: absolute;
       right: 3.6rem;
     }
-    @include laptop{
+
+    @include laptop {
       right: 12rem;
     }
   }
+
   &__button {
     position: relative;
     background-color: $brainflix-blue;
@@ -87,10 +95,12 @@
     color: $white;
     border-radius: 0.4rem;
     text-align: center;
-    transition: all .3s;
-    &:hover{
+    transition: all 0.3s;
+
+    &:hover {
       background-color: $brainflix-dark-blue;
     }
+
     @include tablet {
       width: 25%;
       margin-right: 8.6rem;
@@ -102,6 +112,7 @@
       z-index: 10;
     }
   }
+
   &__btn {
     cursor: pointer;
     background-color: transparent;

@@ -2,6 +2,7 @@ import React from "react";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 import "./Hero.scss";
+import moment from 'moment'
 
 
 const  Hero =(props) => {
@@ -13,7 +14,7 @@ const  Hero =(props) => {
         <div className="hero__info">
           <div className="hero__info--channel-date">
             <h3 className="channel">{`By ${props.channel}`}</h3>
-            <p className="date">07/11/2021</p>
+            <p className="date">{moment(props.timestamp).format("MM/DD/YYYY")}</p>
           </div>
           <div className="hero__info--likes-views">
             <p className="views">
