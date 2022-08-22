@@ -6,8 +6,8 @@ import AddComment from "./components/AddComment/AddComment";
 import Comments from "./components/Comments/Comments";
 import NextVideos from "./components/NextVideos/NextVideos";
 import "./App.scss";
-import videoDetail from "./data/videos.json";
-import videos from "./data/video-details.json";
+import nextVideos from "./data/videos.json";
+import videosFullData from "./data/video-details.json";
 
 function randomVideoId(arr) {
   return Math.floor(Math.random() * arr.length);
@@ -17,20 +17,23 @@ function getVideo(array, id) {
   return array.find((video) => video.id === id);
 }
 
-const ranId = videos[randomVideoId(videos)].id;
+const ranId = videosFullData[randomVideoId(videosFullData)].id;
 class App extends Component {
   state = {
+    nextVideosData: nextVideos,
+    mainVideoFullData: videosFullData,
     videoId: ranId,
   };
 
   setVideoId = (id) => {
-    this.setState({
+    this.setState(prevState=>({
+      ...prevState,
       videoId: id,
-    });
+    }));
   };
 
   render() {
-    const video = getVideo(videos, this.state.videoId);
+    const video = getVideo(this.state.mainVideoFullData, this.state.videoId);
     const {
       comments,
       description,
@@ -56,7 +59,7 @@ class App extends Component {
             {/*hac means hero, addcomment, comments */}
 
             <Hero
-              videos={this.state.videos}
+              videos={this.state.nextVideosData}
               setVideoId={this.setVideoId}
               videoId={id}
               description={description}
@@ -76,7 +79,7 @@ class App extends Component {
             {/*nv means newvideos */}
 
             <NextVideos
-              videoDetail={videoDetail}
+              nextVideos={this.state.nextVideosData}
               videoId={id}
               setVideoId={this.setVideoId}
             />

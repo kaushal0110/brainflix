@@ -1,9 +1,8 @@
 import React from "react";
-// import videos from "../../data/videos.json";
 import "./NextVideos.scss";
 
 const  NextVideos =(props) => {
-    const nextVideos = props.videoDetail.filter(
+    const nextVideos = props.nextVideos.filter(
       (video) => video.id !== props.videoId
     );
     const {setVideoId} = props
