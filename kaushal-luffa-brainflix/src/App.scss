@@ -23,7 +23,10 @@ img {
   height: 100%;
   border-radius: inherit;
 }
-
+a{
+  text-decoration: none;
+  color: inherit;
+}
 @include laptop {
   .content__container {
     padding-left: 12rem;

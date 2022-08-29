@@ -5,8 +5,8 @@ const  Video =(props) => {
     return (
       <div className="video__container">
       <video
-        controls
         poster={props.image}
+        controls={props.controls}
         >
         {/* <source src={videoDetails[0].video} type="video/mp4" /> */}
       </video>

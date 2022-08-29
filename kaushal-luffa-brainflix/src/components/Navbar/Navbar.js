@@ -5,14 +5,15 @@ import userImg from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
 import "./Navbar.scss";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 
 const  Navbar =(props) => {
     return (
       <div className="navbar">
-        <div className="navbar__logo">
+        <Link className="navbar__logo" to='/'>
           <img src={logo} alt="logo" />
-        </div>
+        </Link>
         <div className="navbar-input-img">
           <div className="navbar__input">
             <img
