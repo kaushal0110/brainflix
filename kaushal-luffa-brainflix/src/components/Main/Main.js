@@ -4,7 +4,7 @@ import Hero from "../Hero/Hero";
 import AddComment from "../AddComment/AddComment";
 import Comments from "../Comments/Comments";
 import NextVideos from "../NextVideos/NextVideos";
-import "../../App.scss";
+import "./Main.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 

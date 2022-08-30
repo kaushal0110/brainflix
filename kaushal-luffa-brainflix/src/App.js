@@ -1,5 +1,4 @@
 import Main from "./components/Main/Main";
-import "./App.scss";
 import {Route, Switch} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Upload from "./components/Upload/Upload";

@@ -5,7 +5,7 @@ const Button = (props) => {
   return (
     <>
       {props.alt === "upload" ? (
-        <Link className={props.className[0]} to='/upload'>
+        <Link className={props.className[0]} to="/upload">
           <div className={props.className[1]}>
             <img src={props.icon} alt={props.alt} />
           </div>
@@ -14,7 +14,7 @@ const Button = (props) => {
           </button>
         </Link>
       ) : (
-        <div className={props.className[0]}>
+        <div className={props.className[0]} onClick={props.handleClick}>
           <div className={props.className[1]}>
             <img src={props.icon} alt={props.alt} />
           </div>
