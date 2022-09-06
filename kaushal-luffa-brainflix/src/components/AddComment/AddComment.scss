@@ -9,6 +9,9 @@
   @include tablet {
     padding: 1.6rem 3.6rem 0 3.6rem;
   }
+  @include laptop {
+    padding: 1.6rem 0 0 3.6rem;
+  }
 
   &__heading {
     margin-bottom: 1.6rem;
@@ -16,8 +19,11 @@
 
   &__container {
     display: flex;
-    border-bottom: 2px solid $mercury;
+    border-bottom: 1px solid $mercury;
     padding-bottom: 1.6rem;
+    @include tablet{
+      padding-right:3.6rem;
+    }
 
     &--img {
       width: 3.6rem;
@@ -49,7 +55,7 @@
         padding-left: 1rem;
 
         &:focus {
-          outline: 2px solid $brainflix-blue;
+          outline: 1px solid $brainflix-blue;
         }
 
         @include tablet {
@@ -92,7 +98,7 @@
       }
 
       @include tablet {
-        width: 30%;
+        width: 40%;
       }
 
       &--icon {

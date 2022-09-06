@@ -1,6 +1,5 @@
 import React from 'react'
 import moment from 'moment';
-import cimg from "../../assets/images/Mohan-muruge.jpg";
 import './Comment.scss'
 
 const Comment = (props) => {
@@ -10,11 +9,11 @@ const Comment = (props) => {
        return (
            <div className="comment" key={idx}>
               <div className="comment__profile-pic">
-                <img
+                {/* <img
                   className="comment__profile-pic--pic"
                   src={cimg}
                   alt="usrimg"
-                  />
+                  /> */}
               </div>
               <div className="comment__content">
                 <div className="comment__content-name-date">
