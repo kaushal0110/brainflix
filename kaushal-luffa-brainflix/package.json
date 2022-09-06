@@ -1,6 +1,5 @@
 {
   "name": "kaushal-luffa-brainflix",
-  "homepage": "https://kaushalluffa.github.io/brainflix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
