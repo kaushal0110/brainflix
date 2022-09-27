@@ -17,16 +17,16 @@ const Main = () => {
   useEffect(() => {
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/${
+        `http://localhost:8080/videos/${
           videoId || "84e96018-4022-434e-80bf-000ce4cd12b8"
-        }?api_key='7f22505c-551d-4321-95d7-fdead6c6f195'`
+        }`
       )
       .then((res) => res.data)
       .then((data) => setVideos(data));
 
     axios
       .get(
-        `https://project-2-api.herokuapp.com/videos/?api_key='7f22505c-551d-4321-95d7-fdead6c6f195'`
+        `http://localhost:8080/videos`
       )
       .then((res) => res.data)
       .then((data) => setNextVideos(data));
