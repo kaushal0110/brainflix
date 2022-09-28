@@ -12,7 +12,6 @@ const Main = () => {
   const [videos, setVideos] = useState({});
   const [nextVideos, setNextVideos] = useState([]);
 
-  
   let { videoId } = useParams();
   useEffect(() => {
     axios
@@ -25,9 +24,7 @@ const Main = () => {
       .then((data) => setVideos(data));
 
     axios
-      .get(
-        `http://localhost:8080/videos`
-      )
+      .get(`http://localhost:8080/videos`)
       .then((res) => res.data)
       .then((data) => setNextVideos(data));
   }, [videoId]);

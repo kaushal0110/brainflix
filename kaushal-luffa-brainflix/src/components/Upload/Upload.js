@@ -7,7 +7,6 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const Upload = () => {
-  const [isUploading, setIsUploading] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -18,12 +17,13 @@ const Upload = () => {
       channel: "By You",
       image: "https://i.imgur.com/l2Xfgpl.jpg",
     };
-    setIsUploading(true);
     axios({
       method: "post",
       url:"http://localhost:8080/videos",
       data: ob
     });
+    setTitle('')
+    setDescription('')
   };
   return (
     <>

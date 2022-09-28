@@ -8,7 +8,7 @@ import './AddComment.scss'
 const  AddComment = (props)=> {
     return (
       <div className="addComment">
-        <h4 className="addComment__heading">{`${props.numberOfComments} Comments`}</h4>
+        <h4 className="addComment__heading">{`${props.numberOfComments || 0} Comments`}</h4>
         <div className="addComment__container">
           <div className="addComment__container--img">
             <img src={userImg} alt="userImage" />
