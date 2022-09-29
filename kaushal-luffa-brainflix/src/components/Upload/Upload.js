@@ -1,29 +1,50 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import publishIcon from "../../assets/icons/publish.svg";
-import { Link, Redirect, Route } from "react-router-dom";
+import { Link, Route, useHistory } from "react-router-dom";
 import "./Upload.scss";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
 
 const Upload = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
+const history = useHistory()
   const handleClick = () => {
-    const ob = {
-      id: uuidv4(),
+    const id = uuidv4()
+    const singleVideoData = {
+      id,
       title,
       channel: "By You",
       image: "https://i.imgur.com/l2Xfgpl.jpg",
     };
+    const fullVideoData = {
+      title,
+      channel: "You",
+      image: "http://localhost:8080/images/image1.jpeg",
+      description,
+      views: "0",
+      likes: "0",
+      duration: "4:20",
+      video: "https://project-2-api.herokuapp.com/stream",
+      timestamp: moment.now(),
+      comments: [],
+      id,
+    };
     axios({
       method: "post",
-      url:"http://localhost:8080/videos",
-      data: ob
+      url: "http://localhost:8080/videos",
+      data: singleVideoData,
+    });
+    axios({
+      method: "post",
+      url: "http://localhost:8080/videos-details",
+      data: fullVideoData,
     });
     setTitle('')
     setDescription('')
+    history.push('/')
   };
   return (
     <>
