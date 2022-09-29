@@ -14,7 +14,7 @@ const Hero = (props) => {
       </div>
       <div className="hero__info">
         <div className="hero__info--channel-date">
-          <h3 className="channel">{`By ${channel}`}</h3>
+          <h3 className="channel">{`By ${channel || 'You'}`}</h3>
           <p className="date">{moment(timestamp).format("MM/DD/YYYY")}</p>
         </div>
         <div className="hero__info--likes-views">
